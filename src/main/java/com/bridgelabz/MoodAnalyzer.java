@@ -11,9 +11,13 @@ public class MoodAnalyzer {
     }
 
     public String analyzeMood() {
-        if (message.contains("Iam in Sad Mood"))
-            return "SAD";
-        else
+        try {
+            if (message.contains("Iam in Sad Mood")) {
+                return "SAD";
+            }
             return "HAPPY";
+        } catch (Exception e) {
+            return "HAPPY";
+        }
     }
 }
